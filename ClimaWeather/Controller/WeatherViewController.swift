@@ -12,7 +12,7 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
     
     
     //Constants
-    let key = "6c3304582b53d366dff5ef35000eecaa"
+    let APP_ID = "6c3304582b53d366dff5ef35000eecaa"
     
     //TODO: Declare instance variables here
     let locationManager = CLLocationManager()
@@ -30,6 +30,25 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
         //set acciracy distanse
         locationManager.desiredAccuracy = kCLLocationAccuracyThreeKilometers
         locationManager.requestWhenInUseAuthorization()
+    }
+    
+    
+    //MARK: - Location Manager Delegate Methods
+    /*****************************************************/
+    //write the didUpdateLocations method here:
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let location = locations.last
+        if location!.horizontalAccuracy > 0 {
+            locationManager.stopUpdatingLocation()
+            let latitude = String((location?.coordinate.latitude)!)
+            let longitude = String((location?.coordinate.longitude)!)
+            let param : [String:String] = ["lat":latitude,"lon":longitude,"appid":APP_ID]
+        }
+    }
+    
+    //Write the didFailWithError method here:
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        cityLabel.text = "Location Unavailable"
     }
     
 
