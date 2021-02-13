@@ -6,10 +6,16 @@
 //
 
 import UIKit
+import CoreLocation
 
-class WeatherViewController: UIViewController {
+class WeatherViewController: UIViewController, CLLocationManagerDelegate {
     
     
+    //Constants
+    let key = "6c3304582b53d366dff5ef35000eecaa"
+    
+    //TODO: Declare instance variables here
+    let locationManager = CLLocationManager()
     
     //Pre-linked IBOutlets
     @IBOutlet weak var weatherIcon: UIImageView!
@@ -19,8 +25,14 @@ class WeatherViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        //TODO: Set up the location manager here
+        locationManager.delegate = self
+        //set acciracy distanse
+        locationManager.desiredAccuracy = kCLLocationAccuracyThreeKilometers
+        locationManager.requestWhenInUseAuthorization()
     }
+    
+
 
 
 }
