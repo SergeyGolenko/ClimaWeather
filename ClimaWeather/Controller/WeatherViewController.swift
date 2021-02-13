@@ -7,7 +7,15 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class WeatherViewController: UIViewController {
+    
+    
+    
+    //Pre-linked IBOutlets
+    @IBOutlet weak var weatherIcon: UIImageView!
+    @IBOutlet weak var cityLabel: UILabel!
+    @IBOutlet weak var temperatureLabel: UILabel!
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
