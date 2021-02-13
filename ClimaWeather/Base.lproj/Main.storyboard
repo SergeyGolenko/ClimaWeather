@@ -73,24 +73,29 @@
                             <constraint firstItem="qxh-rx-z4Y" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="h3X-Yb-jTx"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cityLabel" destination="AkB-Av-Bb7" id="LGf-Ku-YHD"/>
+                        <outlet property="temperatureLabel" destination="qxh-rx-z4Y" id="y2L-hx-wuG"/>
+                        <outlet property="weatherIcon" destination="px6-aS-kVl" id="KJs-ie-fE6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="13.043478260869566" y="137.94642857142856"/>
         </scene>
-        <!--View Controller-->
+        <!--Change City View Controller-->
         <scene sceneID="vRE-eK-V7P">
             <objects>
-                <viewController id="bpL-4Y-UNg" sceneMemberID="viewController">
+                <viewController id="bpL-4Y-UNg" customClass="ChangeCityViewController" customModule="ClimaWeather" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zep-vy-MIG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i3c-RH-GsX">
-                                <rect key="frame" x="0.0" y="67" width="414" height="775"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cityBackground" translatesAutoresizingMaskIntoConstraints="NO" id="lF4-Di-XV7" userLabel="Background Image View">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="775"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bj0-03-7gb" userLabel="Container View">
                                         <rect key="frame" x="0.0" y="30" width="414" height="239"/>
@@ -106,6 +111,9 @@
                                                     <constraint firstAttribute="width" constant="50" id="DhD-dJ-Xo0"/>
                                                 </constraints>
                                                 <state key="normal" image="left"/>
+                                                <connections>
+                                                    <action selector="backButtonPressed:" destination="bpL-4Y-UNg" eventType="touchUpInside" id="hC3-h0-ktZ"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z6p-rB-k5W">
                                                 <rect key="frame" x="107" y="156.5" width="200" height="82.5"/>
@@ -116,6 +124,9 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="15" scale="medium"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="getWeatherPressed:" destination="bpL-4Y-UNg" eventType="touchUpInside" id="bIr-nC-5Op"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -150,11 +161,14 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="i3c-RH-GsX" secondAttribute="bottom" id="2ML-2x-p5P"/>
-                            <constraint firstItem="i3c-RH-GsX" firstAttribute="top" secondItem="Hvo-sn-eZR" secondAttribute="top" constant="67" id="5vI-qe-n4L"/>
+                            <constraint firstItem="i3c-RH-GsX" firstAttribute="top" secondItem="Hvo-sn-eZR" secondAttribute="top" id="5vI-qe-n4L"/>
                             <constraint firstItem="i3c-RH-GsX" firstAttribute="leading" secondItem="Hvo-sn-eZR" secondAttribute="leading" id="87V-SM-FMP"/>
                             <constraint firstItem="i3c-RH-GsX" firstAttribute="trailing" secondItem="Hvo-sn-eZR" secondAttribute="trailing" id="Yck-5G-Wmn"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="changeCityTextField" destination="OTI-mS-4c7" id="Z9Y-tT-uE1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WJ0-gj-Bd1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
