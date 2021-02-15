@@ -59,11 +59,18 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
     //MARK: - updateWeatherData method here
     func updateWeatherData(json : JSON) {
         let tempResult = json["main"]["temp"].double
-        let city = json["name"].string
-        temperatureLabel.text = String(Int(tempResult! - 273.15))
-        cityLabel.text = city!
+        weatherDataModel.temperature = Int(tempResult! - 273.15)
+        weatherDataModel.city = json["name"].string!
+        weatherDataModel.condition = json["weather"][0]["id"].intValue
+        updateUIWithWeatherData()
+    }
+    
+    //MARK: - UI Updates
+    func updateUIWithWeatherData(){
+        temperatureLabel.text = String(weatherDataModel.temperature)
+        cityLabel.text = weatherDataModel.city
+        weatherIcon.image = UIImage(named: weatherDataModel.updateWeatherIcon(condition: weatherDataModel.condition))
         
-     
     }
     
     
@@ -73,7 +80,6 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
     //write the didUpdateLocations method here:
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location = locations.last
-        print(location)
         if location!.horizontalAccuracy > 0 {
             locationManager.stopUpdatingLocation()
             locationManager.delegate = nil
