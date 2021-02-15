@@ -20,10 +20,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="21" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qxh-rx-z4Y" userLabel="Temperature Label">
-                                <rect key="frame" x="294" y="408" width="100" height="80"/>
+                                <rect key="frame" x="94" y="408" width="300" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="3RJ-5c-JQ0"/>
-                                    <constraint firstAttribute="width" constant="100" id="VTi-i2-HAK"/>
+                                    <constraint firstAttribute="width" constant="300" id="VTi-i2-HAK"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="90"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -32,12 +32,12 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="px6-aS-kVl" userLabel="Weather Condition Image">
                                 <rect key="frame" x="35" y="510" width="343" height="218"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kiev" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AkB-Av-Bb7" userLabel="City Label">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kiev" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AkB-Av-Bb7" userLabel="City Label">
                                 <rect key="frame" x="35" y="789" width="229" height="53"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="53" id="XBY-k0-jto"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="54"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
