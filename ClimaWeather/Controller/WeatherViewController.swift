@@ -25,7 +25,7 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var weatherIcon: UIImageView!
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
-    
+    @IBOutlet weak var speedWind: UILabel!
     
 
 
@@ -58,8 +58,9 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
     
     //MARK: - updateWeatherData method here
     func updateWeatherData(json : JSON) {
-        let tempResult = json["main"]["temp"].double
-        weatherDataModel.temperature = Int(tempResult! - 273.15)
+            guard   let tempResult = json["main"]["temp"].double else {return}
+            weatherDataModel.temperature = Int(tempResult - 273.15)
+        weatherDataModel.speedWind = json["wind"]["speed"].intValue
         weatherDataModel.city = json["name"].string!
         weatherDataModel.condition = json["weather"][0]["id"].intValue
         updateUIWithWeatherData()
@@ -67,9 +68,10 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
     
     //MARK: - UI Updates
     func updateUIWithWeatherData(){
-        temperatureLabel.text = String(weatherDataModel.temperature)
+        temperatureLabel.text = String(weatherDataModel.temperature) + "℃"
         cityLabel.text = weatherDataModel.city
         weatherIcon.image = UIImage(named: weatherDataModel.updateWeatherIcon(condition: weatherDataModel.condition))
+        speedWind.text = String(weatherDataModel.speedWind) + "💨"
         
     }
     
@@ -96,9 +98,22 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         cityLabel.text = "Location Unavailable"
     }
+}
+
+extension WeatherViewController : ChangeCityProtocol {
+    func userEnterNewCity(city: String) {
+        let params : [String:String] = ["appid":APP_ID,"q":city,"lang":"ru"]
+        getWeatherData(url: WEATHER_URL, param: params)
+    }
     
-
-
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "changeCityName"{
+            let destinationVC = segue.destination as? ChangeCityViewController
+            destinationVC?.delegate = self
+            
+        }
+    }
+    
 }
 

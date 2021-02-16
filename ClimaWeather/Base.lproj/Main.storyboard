@@ -37,7 +37,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="53" id="XBY-k0-jto"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -52,6 +52,18 @@
                                     <segue destination="bpL-4Y-UNg" kind="presentation" identifier="changeCityName" id="zVh-vb-WfW"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="скорость ветра" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kdF-N7-kPL" userLabel="Temperature Label">
+                                <rect key="frame" x="94" y="318" width="300" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="5Aa-8z-lYQ"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="R2o-v4-ew7"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="aq8-YO-YiB"/>
+                                    <constraint firstAttribute="height" constant="80" id="pDz-JD-ynT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -61,6 +73,7 @@
                             <constraint firstItem="AkB-Av-Bb7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="35" id="5Gp-02-OoA"/>
                             <constraint firstItem="A4J-xa-RGG" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="68c-pp-doU"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="px6-aS-kVl" secondAttribute="trailing" constant="36" id="6to-3i-mFt"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kdF-N7-kPL" secondAttribute="trailing" constant="20" id="9Rl-B1-gXm"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qxh-rx-z4Y" secondAttribute="trailing" constant="20" id="9Vs-DG-Lwj"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="AkB-Av-Bb7" secondAttribute="trailing" constant="150" id="Bb0-zs-LXW"/>
                             <constraint firstItem="AkB-Av-Bb7" firstAttribute="top" secondItem="px6-aS-kVl" secondAttribute="bottom" constant="61" id="Hkb-9J-S1M"/>
@@ -71,10 +84,12 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QRw-sq-0Je" secondAttribute="trailing" constant="20" id="bgv-ST-qjk"/>
                             <constraint firstItem="QRw-sq-0Je" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="dC9-ee-Wza"/>
                             <constraint firstItem="qxh-rx-z4Y" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="h3X-Yb-jTx"/>
+                            <constraint firstItem="qxh-rx-z4Y" firstAttribute="top" secondItem="kdF-N7-kPL" secondAttribute="bottom" constant="10" id="on8-rj-8Hp"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="cityLabel" destination="AkB-Av-Bb7" id="LGf-Ku-YHD"/>
+                        <outlet property="speedWind" destination="kdF-N7-kPL" id="yBQ-gp-vax"/>
                         <outlet property="temperatureLabel" destination="qxh-rx-z4Y" id="y2L-hx-wuG"/>
                         <outlet property="weatherIcon" destination="px6-aS-kVl" id="KJs-ie-fE6"/>
                     </connections>
