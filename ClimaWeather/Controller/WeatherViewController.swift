@@ -33,15 +33,18 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var longitude: UILabel!
     @IBOutlet weak var sunset: UILabel!
     @IBOutlet weak var sunrise: UILabel!
+    @IBOutlet weak var viewForContainer: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewForContainer.layer.cornerRadius = view.frame.width / 5
         //TODO: Set up the location manager here
         locationManager.delegate = self
         //set acciracy distanse
         locationManager.desiredAccuracy = kCLLocationAccuracyThreeKilometers
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
+        
       
     }
     
