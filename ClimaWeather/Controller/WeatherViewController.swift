@@ -32,7 +32,7 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var latiude: UILabel!
     @IBOutlet weak var longitude: UILabel!
     @IBOutlet weak var sunset: UILabel!
-    
+    @IBOutlet weak var sunrise: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,6 +72,8 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
         weatherDataModel.latitude = json["coord"]["lat"].doubleValue
         weatherDataModel.longitude = json["coord"]["lon"].doubleValue
         weatherDataModel.clouds = json["weather"][0]["main"].stringValue
+        weatherDataModel.intDate = json["sys"]["sunrise"].intValue
+        weatherDataModel.intDate2 = json["sys"]["sunset"].intValue
         updateUIWithWeatherData()
     }
     
@@ -85,6 +87,9 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
         latiude.text = "latitude : " + String(weatherDataModel.latitude)
         longitude.text = "longitude : " + String(weatherDataModel.longitude)
         clouds.text = "Cloudy : " + weatherDataModel.clouds
+        sunset.text = "Sunset " + weatherDataModel.formatDate(date: weatherDataModel.sunset) + "🌘"
+        sunrise.text = "Sunrise " + weatherDataModel.formatDate(date: weatherDataModel.sunrise) + "🌕"
+       
         
     }
     

@@ -19,6 +19,24 @@ class WeatherDataModel {
     var latitude : Double = 0
     var longitude : Double = 0
     var clouds : String = ""
+    var intDate = 1485762037
+    var intDate2 = 1485762038
+    var sunrise : Date {
+        Date(timeIntervalSinceReferenceDate: TimeInterval(intDate))
+    }
+    
+    var sunset : Date {
+        Date(timeIntervalSinceReferenceDate: TimeInterval(intDate2))
+    }
+    
+    
+    //Format Date
+    func formatDate(date:Date) -> String{
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "en_US")
+        dateFormatter.setLocalizedDateFormatFromTemplate("HH:mm") // set template after setting locale
+        return (dateFormatter.string(from: date)) // December 31
+    }
     
     //This method turns a condition code into the name of the weather condition image
     
