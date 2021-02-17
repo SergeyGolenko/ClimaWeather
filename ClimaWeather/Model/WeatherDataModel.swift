@@ -15,6 +15,10 @@ class WeatherDataModel {
     var city : String = ""
     var weatherIconName : String = ""
     var speedWind = 0
+    var station = "station"
+    var latitude : Double = 0
+    var longitude : Double = 0
+    var clouds : String = ""
     
     //This method turns a condition code into the name of the weather condition image
     

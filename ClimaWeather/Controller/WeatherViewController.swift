@@ -29,9 +29,11 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var station: UILabel!
     @IBOutlet weak var country: UILabel!
     @IBOutlet weak var clouds: UILabel!
+    @IBOutlet weak var latiude: UILabel!
+    @IBOutlet weak var longitude: UILabel!
+    @IBOutlet weak var sunset: UILabel!
     
-
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //TODO: Set up the location manager here
@@ -66,15 +68,23 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
         weatherDataModel.speedWind = json["wind"]["speed"].intValue
         weatherDataModel.city = json["name"].string!
         weatherDataModel.condition = json["weather"][0]["id"].intValue
+        weatherDataModel.station = json["sys"]["country"].string!
+        weatherDataModel.latitude = json["coord"]["lat"].doubleValue
+        weatherDataModel.longitude = json["coord"]["lon"].doubleValue
+        weatherDataModel.clouds = json["weather"][0]["main"].stringValue
         updateUIWithWeatherData()
     }
     
     //MARK: - UI Updates
     func updateUIWithWeatherData(){
-        temperatureLabel.text = String(weatherDataModel.temperature) + "℃"
+        temperatureLabel.text = "Temperature : " + String(weatherDataModel.temperature) + "℃"
         cityLabel.text = weatherDataModel.city
         weatherIcon.image = UIImage(named: weatherDataModel.updateWeatherIcon(condition: weatherDataModel.condition))
-        speedWind.text = String(weatherDataModel.speedWind) + "💨"
+        speedWind.text = "Speed wind : " + String(weatherDataModel.speedWind) + "💨"
+        station.text =  "Country : " + weatherDataModel.station
+        latiude.text = "latitude : " + String(weatherDataModel.latitude)
+        longitude.text = "longitude : " + String(weatherDataModel.longitude)
+        clouds.text = "Cloudy : " + weatherDataModel.clouds
         
     }
     
