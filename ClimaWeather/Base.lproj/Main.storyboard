@@ -20,17 +20,20 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="21" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qxh-rx-z4Y" userLabel="Temperature Label">
-                                <rect key="frame" x="94" y="408" width="300" height="80"/>
+                                <rect key="frame" x="94" y="617" width="300" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="3RJ-5c-JQ0"/>
+                                    <constraint firstAttribute="height" constant="40" id="3RJ-5c-JQ0"/>
                                     <constraint firstAttribute="width" constant="300" id="VTi-i2-HAK"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="90"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="px6-aS-kVl" userLabel="Weather Condition Image">
-                                <rect key="frame" x="35" y="510" width="343" height="218"/>
+                                <rect key="frame" x="35" y="679" width="343" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="uWa-E4-4hp"/>
+                                </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kiev" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AkB-Av-Bb7" userLabel="City Label">
                                 <rect key="frame" x="35" y="789" width="229" height="53"/>
@@ -52,15 +55,36 @@
                                     <segue destination="bpL-4Y-UNg" kind="presentation" identifier="changeCityName" id="zVh-vb-WfW"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="скорость ветра" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kdF-N7-kPL" userLabel="Temperature Label">
-                                <rect key="frame" x="94" y="318" width="300" height="80"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="44" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kdF-N7-kPL" userLabel="Temperature Label">
+                                <rect key="frame" x="94" y="567" width="300" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="5Aa-8z-lYQ"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="R2o-v4-ew7"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="aq8-YO-YiB"/>
-                                    <constraint firstAttribute="height" constant="80" id="pDz-JD-ynT"/>
+                                    <constraint firstAttribute="height" constant="40" id="pDz-JD-ynT"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="station" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EP8-U2-qAf" userLabel="Temperature Label">
+                                <rect key="frame" x="94" y="502" width="300" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="EQ7-lx-Qe5"/>
+                                    <constraint firstAttribute="height" constant="40" id="Fc7-wt-eHw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="country" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xc3-gK-h9k" userLabel="Temperature Label">
+                                <rect key="frame" x="94" y="442" width="300" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="0gZ-PT-GMU"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="PIV-wz-UpN"/>
+                                    <constraint firstAttribute="width" constant="300" id="Um8-sa-BZr"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="zb9-di-twY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -76,20 +100,25 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kdF-N7-kPL" secondAttribute="trailing" constant="20" id="9Rl-B1-gXm"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qxh-rx-z4Y" secondAttribute="trailing" constant="20" id="9Vs-DG-Lwj"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="AkB-Av-Bb7" secondAttribute="trailing" constant="150" id="Bb0-zs-LXW"/>
-                            <constraint firstItem="AkB-Av-Bb7" firstAttribute="top" secondItem="px6-aS-kVl" secondAttribute="bottom" constant="61" id="Hkb-9J-S1M"/>
+                            <constraint firstItem="AkB-Av-Bb7" firstAttribute="top" secondItem="px6-aS-kVl" secondAttribute="bottom" constant="10" id="Hkb-9J-S1M"/>
+                            <constraint firstItem="kdF-N7-kPL" firstAttribute="top" secondItem="EP8-U2-qAf" secondAttribute="bottom" constant="25" id="Ky5-iE-dlr"/>
                             <constraint firstAttribute="bottom" secondItem="A4J-xa-RGG" secondAttribute="bottom" id="LFq-U4-uoq"/>
+                            <constraint firstItem="EP8-U2-qAf" firstAttribute="top" secondItem="Xc3-gK-h9k" secondAttribute="bottom" constant="20" id="NkP-ln-KPg"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="AkB-Av-Bb7" secondAttribute="bottom" constant="20" id="R5j-cl-0wn"/>
                             <constraint firstItem="px6-aS-kVl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="35" id="TQ4-0n-JKT"/>
                             <constraint firstItem="A4J-xa-RGG" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="UI2-jp-hNZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Xc3-gK-h9k" secondAttribute="trailing" constant="20" id="Xmw-9V-RqP"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QRw-sq-0Je" secondAttribute="trailing" constant="20" id="bgv-ST-qjk"/>
                             <constraint firstItem="QRw-sq-0Je" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="dC9-ee-Wza"/>
-                            <constraint firstItem="qxh-rx-z4Y" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="h3X-Yb-jTx"/>
                             <constraint firstItem="qxh-rx-z4Y" firstAttribute="top" secondItem="kdF-N7-kPL" secondAttribute="bottom" constant="10" id="on8-rj-8Hp"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EP8-U2-qAf" secondAttribute="trailing" constant="20" id="qNu-16-gQt"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="cityLabel" destination="AkB-Av-Bb7" id="LGf-Ku-YHD"/>
+                        <outlet property="country" destination="Xc3-gK-h9k" id="V3C-dC-94V"/>
                         <outlet property="speedWind" destination="kdF-N7-kPL" id="yBQ-gp-vax"/>
+                        <outlet property="station" destination="EP8-U2-qAf" id="QHb-eL-ybS"/>
                         <outlet property="temperatureLabel" destination="qxh-rx-z4Y" id="y2L-hx-wuG"/>
                         <outlet property="weatherIcon" destination="px6-aS-kVl" id="KJs-ie-fE6"/>
                     </connections>

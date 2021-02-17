@@ -26,6 +26,8 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var speedWind: UILabel!
+    @IBOutlet weak var station: UILabel!
+    @IBOutlet weak var country: UILabel!
     
 
 
